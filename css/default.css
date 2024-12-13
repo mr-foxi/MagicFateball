@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background-color: rgb(39, 0, 41);
+    color: white;
+    font-size: 1.2em;
+}
+h1 {
+    color: chartreuse;
+    font-family: 'AbstractGroovy', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+h2 {
+    color: chartreuse;
+    font-family: 'TreeRoot', Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}

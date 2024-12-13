@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>The Magic Fateball</title>
+        <link rel="stylesheet" type="text/css" href="./css/default.css">
+
+        <style>
+            @font-face {
+                font-family: "AbstractGroovy";
+                src: url("./fonts/AbstractGroovy.ttf")
+            }
+            @font-face {
+                font-family: "TreeRoot";
+                src: url("./fonts/TreeRoot.ttf")
+            }
+            @font-face {
+                font-family: "EvilEmpire";
+                src: url("./fonts/EvilEmpire.ttf");
+            }
+            @font-face {
+                font-family: AwareBold;
+                src: url("./fonts/AwareBold.ttf");
+            }
+        </style>
+    </head>
+<!--****************************HEAD AND BODY BORDER****************************-->
+    <body>
+        <h1>WELCOME TO THE MAGIC FATEBALL</h1>
+        <img src="./images/Fateball_512x512.png"
+            onclick="askRandom()"
+            title="Clicking this will provide a random answer.">
+        <h2>What would you like to ask the fates??</h2>
+        <!--DIV INPUT SECTION BEGINS-->
+        <div class="inputSection">
+            <input id="inputField"
+                onkeypress="return enterKeyPressed(event)" 
+                onclick="this.clear"
+                style="color: white; background-color: black; font-size: 1.3em; width: 20em; font-family: 'AwareBold', Arial, Helvetica, sans-serif;">
+            <button type="button" id="askButton"
+                onclick="askFates()" 
+                style="color:white; background-color: black; font-size: 1.3em; font-family: 'AwareBold', Arial, Helvetica, sans-serif;">Ask the Fates</button>
+        </div>
+        <!--DIV INPUT SECTION ENDS-->
+        <h3 id="responseText" 
+            style="font-family: 'EvilEmpire', Arial, Helvetica, sans-serif; font-size: 2.5em; color: white;"></h3>
+    </body>
+<!--****************************BODY AND SCRIPT BORDER****************************-->
+    <script>
+        // FUNCTION: askFates
+        function askFates() {
+            let userInput = document.getElementById("inputField").value; // Create variable userInput and assign it with the user's input
+            let fatesResponse;
+            /* CAN, SHOULD or DO QUESTION */
+            if ( 
+                userInput.toLowerCase().includes("can i") || userInput.toLowerCase().includes("can we") ||
+                userInput.toLowerCase().includes("should i") || userInput.toLowerCase().includes("should we") ||
+                userInput.toLowerCase().includes("do i") || userInput.toLowerCase().includes("do we")
+                ) 
+                {
+                    fatesNumber = randomNumber(1, 9);
+                    if (fatesNumber == 1){fatesResponse = "The Fates say yes."}
+                    else if (fatesNumber == 2){fatesResponse = "The Fates decline."}
+                    else if (fatesNumber == 3){fatesResponse = "Later."}
+                    else if (fatesNumber == 4){fatesResponse = "Maybe."}
+                    else if (fatesNumber == 5){fatesResponse = "Possibly."}
+                    else if (fatesNumber == 6){fatesResponse = "Probably."}
+                    else if (fatesNumber == 7){fatesResponse = "The Fates find it unlikely."}
+                    else if (fatesNumber == 8){fatesResponse = "The Fates are unsure."}
+                    else if (fatesNumber == 9){fatesResponse = "The Fates choose not to respond."}
+                } 
+            /* OR QUESTION */
+            else if (
+                    userInput.toLowerCase().includes("or")
+                )
+                {
+                    fatesNumber = randomNumber(1, 7);
+                    if (fatesNumber == 1){fatesResponse = "The first option."}
+                    else if (fatesNumber == 2){fatesResponse = "The second option."}
+                    else if (fatesNumber == 3){fatesResponse = "The sum of the total options divided by two."}
+                    else if (fatesNumber == 4){fatesResponse = "The second to last option."}
+                    else if (fatesNumber == 5){fatesResponse = "The final option."}
+                    else if (fatesNumber == 6){fatesResponse = "The Fates are unsure."}
+                    else if (fatesNumber == 7){fatesResponse = "The Fates choose not to respond."}
+                }
+            /* HOW LONG QUESTION */
+            else if (
+                    userInput.toLowerCase().includes("how long")
+                )
+                {
+                    fatesNumber = randomNumber(1, 7);
+                    if (fatesNumber == 1){fatesResponse = "Minutes."}
+                    else if (fatesNumber == 2){fatesResponse = "Hours."}
+                    else if (fatesNumber == 3){fatesResponse = "Days."}
+                    else if (fatesNumber == 4){fatesResponse = "Weeks."}
+                    else if (fatesNumber == 5){fatesResponse = "Months."}
+                    else if (fatesNumber == 6){fatesResponse = "The Fates are unsure."}
+                    else if (fatesNumber == 7){fatesResponse = "The Fates choose not to respond."}
+                }
+            /* UNKNOWN QUESTION */
+            else {fatesResponse = "Sorry The Fates do not understand"}
+            /* SEND FATES RESPONSE */
+            document.getElementById("responseText").innerHTML= fatesResponse;
+        }
+        // FUNCTION: randomNumber
+        function randomNumber(startNumber, endNumber) {
+            let fatesNumber = Math.floor((Math.random() * endNumber) + startNumber);
+            return fatesNumber;
+        }
+        // FUNCTION: enterKeyPressed
+        function enterKeyPressed(event) {
+            if (event.keyCode == 13)
+            {askFates()}
+        }
+        // FUNCTION: askRandom
+        function askRandom() {
+            fatesNumber = randomNumber(1, 14);
+            if (fatesNumber == 1){fatesResponse = "The Fates say yes."}
+            else if (fatesNumber == 2){fatesResponse = "The Fates decline."}
+            else if (fatesNumber == 3){fatesResponse = "Later."}
+            else if (fatesNumber == 4){fatesResponse = "Maybe."}
+            else if (fatesNumber == 5){fatesResponse = "Possibly."}
+            else if (fatesNumber == 6){fatesResponse = "Probably."}
+            else if (fatesNumber == 7){fatesResponse = "The Fates find it unlikely."}
+            else if (fatesNumber == 8){fatesResponse = "The first option."}
+            else if (fatesNumber == 9){fatesResponse = "The second option."}
+            else if (fatesNumber == 10){fatesResponse = "The sum of the total options divided by two."}
+            else if (fatesNumber == 11){fatesResponse = "The second to last option."}
+            else if (fatesNumber == 12){fatesResponse = "The final option."}
+            else if (fatesNumber == 13){fatesResponse = "The Fates are unsure."}
+            else if (fatesNumber == 14){fatesResponse = "The Fates choose not to respond."}
+            else {fatesResponse = "Sorry The Fates do not understand"}
+            /* SEND FATES RESPONSE */
+            document.getElementById("responseText").innerHTML = fatesResponse;
+        }
+    </script>
+    <noscript>My apologies but your browser does not support JaveScript! :c</noscript>
+</html>

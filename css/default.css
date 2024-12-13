@@ -1,8 +1,31 @@
+.navBar {
+	background-color: white;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin-left: 0;
+}
+.navColumn {
+	float: left;
+	background-color: white;
+	height: 2rem;
+	width: 25%;
+	text-align: center;
+	text-decoration: none;
+}
+.navLink {
+	color: rose;
+	font-family: 'TreeRoot';
+}
 body {
     text-align: center;
     background-color: rgb(39, 0, 41);
     color: white;
     font-size: 1.2em;
+}
+.pageHeading {
+	padding-top: 2rem;
 }
 h1 {
     color: chartreuse;

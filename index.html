@@ -2,17 +2,7 @@
 <html>
     <head>
         <title>The Magic Fateball</title>
-        
         <link rel="stylesheet" type="text/css" href="./css/default.css">
-        
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="icon" href="favicon.png" type="image/png">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="manifest" href="manifest.json">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-        <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
 
         <style>
             @font-face {
@@ -28,18 +18,31 @@
                 src: url("./fonts/EvilEmpire.ttf");
             }
             @font-face {
-                font-family: AwareBold;
+                font-family: "AwareBold";
                 src: url("./fonts/AwareBold.ttf");
             }
         </style>
     </head>
 <!--****************************HEAD AND BODY BORDER****************************-->
     <body>
-        <h1>WELCOME TO THE MAGIC FATEBALL</h1>
+		<!--NAVIGATION BAR-->
+		<div class="navBar">
+			<div class="navColumn"><a class="navLink" href="./index.html">Fateball</a></div>
+			<div class="navColumn"><a class="navLink" href="./coin/coin.html">Coin</a></div>
+			<div class="navColumn"><a class="navLink" href="./dice/dice.html">Dice</a></div>
+			<div class="navColumn"><a class="navLink" href="./aboutMe/aboutMe.html">About Me</a></div>
+		</div>
+		
+		<!--PAGE HEADING-->
+		<div class="pageHeading">
+        	<h1>WELCOME TO THE MAGIC FATEBALL</h1>
+		</div>
+		
         <img src="./images/Fateball_512x512.png"
             onclick="askRandom()"
             title="Clicking this will provide a random answer.">
         <h2>What would you like to ask the fates??</h2>
+
         <!--DIV INPUT SECTION BEGINS-->
         <div class="inputSection">
             <input id="inputField"
